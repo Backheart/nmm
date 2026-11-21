@@ -56,6 +56,7 @@ transition:transform .55s var(--bounce),opacity var(--t),box-shadow var(--t)}
 .bento.parted .l{--px:-150px;opacity:.35}.bento.parted .r{--px:150px;opacity:.35}
 .card header{display:flex;align-items:center;gap:12px}
 .badge{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;font-size:1.0625rem;flex:none}
+.badge svg{height:20px;width:auto;max-width:22px;fill:none}
 .g{background:#CFE6CB;color:#3b7a38}.o{background:#F7D9B4;color:#b4610f}.t{background:#BFE3E4;color:#27777c}.lg{background:#DDF0C8;color:#5a8a22}
 .card h3{margin:0;font-size:1.0625rem;font-weight:700}
 .card p{margin:0;font-size:.875rem;line-height:1.55;color:var(--muted)}.card p b{color:var(--ink)}
@@ -117,7 +118,7 @@ transition:transform .55s var(--bounce),opacity var(--t),box-shadow var(--t)}
 .ex figcaption{position:absolute;left:0;right:0;bottom:0;background:#4A4A4A;color:#fff;text-align:center;padding:14px 12px 16px;line-height:1.35}
 .ex figcaption b{display:block;font-size:1rem}.ex figcaption span{font-size:.875rem;opacity:.9}
 /* 8 contact */
-.gt{width:min(92%,940px);display:grid;grid-template-columns:1fr 1.1fr;gap:32px;align-items:start;background:rgba(160,166,190,.25);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:20px;padding:32px 36px;color:#111}
+.gt{width:min(92%,940px);display:grid;grid-template-columns:1fr 1.1fr;gap:32px;align-items:start;background:rgba(160,166,190,.5);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:20px;padding:32px 36px;color:#111}
 .gt h2{margin:0 0 20px;font-size:var(--h2);font-weight:800}
 .gt p{margin:0 0 20px;max-width:26em}
 .gt .em{display:flex;align-items:center;gap:10px}
@@ -146,6 +147,16 @@ transition:transform .55s var(--bounce),opacity var(--t),box-shadow var(--t)}
 .nav.open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}.nav.open .burger span:nth-child(2){opacity:0}.nav.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .vision .rv{z-index:1}
 .gt .em a,.ft .bi a{color:inherit;text-underline-offset:3px}.gt .em a:hover,.ft .bi a:hover{color:var(--crimson)}
+/* ===== Portfolio cards: soft bounce ===== */
+:root{--bounce-soft:cubic-bezier(.34,1.35,.64,1)}
+.pc{transition:border-color var(--t),box-shadow var(--t),transform .55s var(--bounce-soft)}
+.pc:hover,.pc:focus-within{transform:translateY(-8px) scale(1.025)}
+.pc .ov{bottom:-14px;padding-bottom:28px;transition:transform .6s var(--bounce-soft)}
+.pc .more{transform:scale(.82);transition:transform .55s var(--bounce-soft) .12s,background var(--t)}
+.pc:hover .more,.pc:focus-within .more{transform:scale(1)}
+.pc .ov p{opacity:0;transform:translateY(10px);transition:opacity .35s ease .18s,transform .55s var(--bounce-soft) .18s}
+.pc:hover .ov p,.pc:focus-within .ov p{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.pc,.pc .ov,.pc .more,.pc .ov p{transition-duration:.01s!important;transition-delay:0s!important}}
 /* ===== Responsive ===== */
 @media (max-width:820px){
  .burger{display:flex}.nav{padding-right:0;justify-content:flex-start}.nav .logo{margin-right:auto}.nav .cta{padding:0 18px;margin-right:0}.nav ul{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fff;padding:8px 24px 16px;box-shadow:0 14px 24px rgba(0,0,0,.12)}.nav.open ul{display:flex}.nav ul a{display:block;padding:14px 0;font-size:1rem;border-bottom:1px solid #eee}

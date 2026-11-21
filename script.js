@@ -87,6 +87,6 @@
   /* More Info: jump to the contact form with the program pre-filled */
   var fmsg=document.getElementById('fm');
   [].forEach.call(document.querySelectorAll('.pc .more'),function(b){b.addEventListener('click',function(e){
-    e.stopPropagation();fmsg.value='Hello, I would like more information about '+b.closest('.pc').dataset.prog+'.';
+    e.stopPropagation();var hf=b.closest('.pc').dataset.href;if(hf){location.href=hf;return}fmsg.value='Hello, I would like more information about '+b.closest('.pc').dataset.prog+'.';
     document.getElementById('contact').scrollIntoView({behavior:'smooth'});setTimeout(function(){fmsg.focus({preventScroll:true})},700)})});
 })();
