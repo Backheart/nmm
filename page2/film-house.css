@@ -1,0 +1,114 @@
+/* ===== Page 2: The Land of Movies (builds on styles.css: tokens, navbar, footer) ===== */
+
+/* Hero */
+.hero2{display:grid;grid-template:minmax(0,1fr)/minmax(0,1fr);height:clamp(420px,58vw,780px);overflow:hidden;background:#2a2420}
+.hero2>*,.hero2::after{grid-area:1/1}
+.hero2 img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.hero2::after{content:"";pointer-events:none;background:linear-gradient(rgba(0,0,0,.38),transparent 30%,transparent 68%,rgba(0,0,0,.5))}
+.hero2 h1{z-index:1;justify-self:center;align-self:start;margin:clamp(16px,2.4vw,32px) 0 0;padding-inline:16px;text-align:center;color:#fff;font:800 clamp(2rem,3.5vw,3rem)/1.1 'Roboto Slab',Georgia,serif;letter-spacing:.02em;text-shadow:0 2px 14px rgba(0,0,0,.55)}
+.hero2 .once{z-index:1;justify-self:start;align-self:end;margin:0;padding:0 max(24px,calc((100vw - var(--wrap))/2)) clamp(16px,2.4vw,32px);color:#fff;font:700 clamp(1.25rem,2vw,1.75rem)/1.2 'Plus Jakarta Sans',sans-serif;text-shadow:0 2px 12px rgba(0,0,0,.55)}
+
+/* Continuous canvas: warm beige into blurred coral (same photo fusion as page 1) */
+.canvas{position:relative;isolation:isolate;overflow:clip;display:grid;gap:var(--gap);padding:var(--gap) 0;background:#F6EBE1;color:#1E1E1E}
+.canvas .abg{position:absolute;inset:-60px;width:calc(100% + 120px);height:calc(100% + 120px);max-width:none;object-fit:fill;filter:blur(40px) saturate(1.1);z-index:-1}
+.canvas::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(rgba(250,238,228,.94) 0%,rgba(250,238,228,.82) 28%,rgba(250,238,228,.16) 52%,rgba(250,238,228,.26) 74%,rgba(250,238,228,.96) 100%)}
+.canvas>section{position:relative}
+.canvas>section>:not(.deco){position:relative;z-index:1}
+
+/* Decorative background shapes (behind content, never clickable) */
+.deco{position:absolute;z-index:0;pointer-events:none}
+.deco.rect{border-radius:16px;background:rgba(140,130,125,.12)}
+svg.deco{overflow:visible}
+.deco.r3{right:7%;top:8%;width:230px;height:78px}
+.deco.t1{left:6%;top:4%;width:110px;height:110px}
+
+/* 2. Origin story + filmstrip */
+.origin{display:grid;justify-items:center;gap:36px;overflow-x:clip}
+.lead{width:min(92%,680px);margin:0;text-align:center;font-size:1rem;line-height:1.7}
+.lead::first-letter{float:left;font:800 3.6em/.85 'Roboto Slab',Georgia,serif;margin:.06em .1em 0 0;color:#2a2420}
+.strips{display:flex;gap:16px;width:100%;padding-block:14px}
+.strip{flex:1;height:88px;position:relative;overflow:hidden;background:repeating-linear-gradient(90deg,rgba(255,255,255,.16) 0 76px,transparent 76px 88px) center/auto 44px repeat-x,rgba(122,112,106,.3);transition:transform .8s var(--bounce-soft)}
+.strip::before,.strip::after{content:"";position:absolute;left:0;right:0;height:10px;background:repeating-linear-gradient(90deg,transparent 0 10px,rgba(250,240,232,.9) 10px 22px,transparent 22px 32px)}
+.strip::before{top:9px}.strip::after{bottom:9px}
+.strip.l{border-radius:0 8px 8px 0}.strip.r{border-radius:8px 0 0 8px}
+.strips.open .l{transform:translateX(-28px)}.strips.open .r{transform:translateX(28px)}
+
+/* 3. Production stills */
+.stills{display:grid;justify-items:center;gap:28px}
+.pair{width:min(92%,820px);display:grid;grid-template-columns:864fr 1296fr;gap:24px}
+.pair img{width:100%;height:auto;border-radius:14px}
+.narr{width:min(92%,760px);margin:0;font-size:.9375rem;line-height:1.65}
+
+/* 4-5. Feature stories */
+.feature{width:min(92%,960px);margin-inline:auto;display:grid;grid-template-columns:1.55fr 1fr;gap:32px;align-items:center}
+.feature.rev{grid-template-columns:1fr 1.55fr}
+.feature .photo{width:100%;height:auto;border-radius:16px}
+.feature h2{margin:0 0 12px;font-size:clamp(1.0625rem,1.6vw,1.25rem);font-weight:800;line-height:1.3}
+.feature ul{margin:0;padding-left:1.1em;font-size:.875rem;line-height:1.55}
+.feature li+li{margin-top:14px}
+.note{background:rgba(190,182,178,.38);border-radius:16px;padding:28px 24px}
+
+/* 6. Awards */
+.awards{padding-block:24px;background:radial-gradient(ellipse 60% 55% at 50% 55%,rgba(226,98,88,.4),transparent 70%)}
+.awards::before{content:"";position:absolute;inset:0;background:url("images/p2-camera-bg.webp") center/min(1100px,130%) no-repeat;pointer-events:none;z-index:0}
+.awards .inner{width:min(92%,780px);margin-inline:auto;text-align:center}
+.awards h2{margin:0 0 22px;font-size:var(--h2);font-weight:800}
+.awards ul{list-style:inside disc;margin:0;padding:0;font-size:.875rem;line-height:1.55}
+.awards li+li{margin-top:12px}
+
+/* 7. Behind-the-scenes gallery */
+.gal{width:min(92%,960px);margin-inline:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.gal figure{margin:0;overflow:hidden;border-radius:14px;aspect-ratio:546/576;background:#d9cfc8}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.gal figure:hover img{transform:scale(1.05)}
+.gal .pano{grid-column:1/-1;aspect-ratio:2270/928;border-radius:16px}
+
+/* 8. Promise + posters */
+.promise{display:grid;justify-items:center;gap:14px;text-align:center}
+.promise h2{width:min(92%,760px);margin:0;font-size:clamp(1.125rem,1.9vw,1.5rem);font-weight:800;line-height:1.35}
+.cap{margin:0;font-style:italic;font-size:.875rem;color:#4a423c}
+.posters{width:min(92%,880px);display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:28px}
+.poster{margin:0;border-radius:12px;overflow:hidden;aspect-ratio:2/3;box-shadow:0 12px 28px rgba(40,20,10,.28);transition:transform var(--t),box-shadow var(--t),opacity .8s var(--ease)}
+.poster:hover{transform:translateY(-6px);box-shadow:0 20px 38px rgba(40,20,10,.34)}
+.poster img{width:100%;height:100%;object-fit:cover}
+
+/* 9. Call to action */
+.cta{padding:0 4% 220px}
+.cta .row{display:flex;justify-content:center;align-items:center;gap:32px;flex-wrap:wrap}
+.cta p{margin:0;max-width:19em;font-weight:800;font-size:clamp(1.125rem,1.7vw,1.4rem);line-height:1.3;text-align:center}
+.pill{background:var(--blue);color:#fff;text-decoration:none;font-size:1.125rem;font-weight:400;padding:22px 48px;border-radius:16px;transition:transform var(--t),filter var(--t)}
+.pill:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.deco.shapes{left:50%;top:96px;transform:translateX(-50%);width:min(1120px,94%);height:auto}
+
+/* Scroll reveal (only when JS is running) */
+.rise{transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.js .rise:not(.in){opacity:0;transform:translateY(24px)}
+
+/* ===== Hover effects: bouncy photos ===== */
+:root{--pop:cubic-bezier(.34,1.56,.64,1)}
+.ph{margin:0;overflow:hidden;border-radius:14px;box-shadow:0 6px 18px rgba(40,20,10,.12);transition:transform .6s var(--bounce-soft),box-shadow .4s ease,opacity .8s var(--ease)}
+.ph img{width:100%;height:auto;transition:transform .7s var(--bounce-soft)}
+.ph:hover{transform:translateY(-6px);box-shadow:0 18px 34px rgba(40,20,10,.28)}
+.ph:hover img{transform:scale(1.07)}
+.gal figure{position:relative;transition:transform .6s var(--pop),box-shadow .4s ease}
+.gal img{transition:transform .65s var(--pop)}
+.gal figure:hover{z-index:2;box-shadow:0 18px 34px rgba(40,20,10,.3)}
+.gal figure:nth-child(odd):hover{transform:translateY(-8px) rotate(-1.2deg) scale(1.02)}
+.gal figure:nth-child(even):hover{transform:translateY(-8px) rotate(1.2deg) scale(1.02)}
+.gal figure.pano:hover{transform:translateY(-6px) scale(1.01)}
+.gal figure:hover img{transform:scale(1.1)}
+.poster{aspect-ratio:69/100;transition:transform .55s var(--pop),box-shadow .4s ease,opacity .8s var(--ease)}
+.poster:hover{transform:translateY(-10px) rotate(-1deg) scale(1.02)}
+.poster:nth-child(even):hover{transform:translateY(-10px) rotate(1deg) scale(1.02)}
+@media (prefers-reduced-motion:reduce){.ph,.ph img,.gal figure,.gal img,.poster{transition-duration:.01s!important}}
+/* Supplied background art: sections 4-5 spill, section 7 broadens, tag sits under the contact line */
+#releases::before{content:"";position:absolute;right:0;top:-70px;width:min(100%,1500px);aspect-ratio:2576/2144;background:url("images/p2-bg-stories.webp") center/100% 100% no-repeat;pointer-events:none;z-index:0}
+.gallery::before{content:"";position:absolute;left:50%;top:50%;width:min(1100px,120%);aspect-ratio:2880/3745;transform:translate(-50%,-50%);background:url("images/p2-bg-gallery.webp") center/100% 100% no-repeat;pointer-events:none;z-index:0}
+@media (max-width:820px){
+ .feature,.feature.rev{grid-template-columns:1fr}
+ .pair{grid-template-columns:1fr}
+ .gal{grid-template-columns:repeat(2,1fr)}
+ .posters{grid-template-columns:1fr;width:min(70%,320px)}
+ .strip{height:64px}
+}
+@media (prefers-reduced-motion:reduce){.strip,.gal img,.rise,.poster{transition-duration:.01s!important}.js .rise:not(.in){transform:none}}
