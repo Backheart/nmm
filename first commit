@@ -1,0 +1,29 @@
+[33mcommit 6178a269a82d83d131fe0171c677e5b64a572f61[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32madded_page3[m[33m, [m[1;31morigin/added_page3[m[33m)[m
+Author: Suuna Peter <backfamilyemnt@gmail.com>
+Date:   Mon Nov 23 19:55:16 2026 +0300
+
+    added_page3
+
+[33mcommit 559f850f440eb03fe94b640bb7c5aceb81291fbe[m[33m ([m[1;31morigin/added_page2[m[33m, [m[1;32madded_page2[m[33m)[m
+Author: Suuna Peter <backfamilyemnt@gmail.com>
+Date:   Sun Nov 22 01:00:58 2026 +0300
+
+    added_page2
+
+[33mcommit eed6bf6919749ec142516c986269406776462f80[m[33m ([m[1;31morigin/soft_animation[m[33m, [m[1;32msoft_animation[m[33m)[m
+Author: Suuna Peter <backfamilyemnt@gmail.com>
+Date:   Sun Nov 22 00:28:52 2026 +0300
+
+    soft_animation
+
+[33mcommit 2e3e464d7a0e522852689114ee2b48cdefb151da[m[33m ([m[1;31morigin/nmm_first[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mnmm_first[m[33m, [m[1;32mmain[m[33m)[m
+Author: Suuna Peter <backfamilyemnt@gmail.com>
+Date:   Thu Nov 19 04:23:04 2026 +0300
+
+    nmm_first
+
+[33mcommit e1e531cb5f203ecb46989681971a217fe03e172e[m
+Author: Suuna Peter <backfamilyemnt@gmail.com>
+Date:   Thu Nov 19 04:08:20 2026 +0300
+
+    first commit
